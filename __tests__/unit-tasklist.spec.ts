@@ -31,8 +31,9 @@ describe(getColumnLengths.name, () => {
     { input: '== = = ===% = =', expectedChar: '%' },
   ].forEach(({ input, expectedChar }) =>
     it(`should throw error for line ${input} when finds '${expectedChar}'`, () => {
-      expect(() => getColumnLengths(input))
-        .toThrow(`Did not expect to observe '${expectedChar}'.`);
+      expect(() => getColumnLengths(input)).toThrow(
+        `Did not expect to observe '${expectedChar}'.`
+      );
     })
   );
 });
@@ -43,8 +44,9 @@ describe(orderedParts.name, () => {
     { columnLengthList: [1, undefined], expectedForbiddenValue: undefined },
   ].forEach(({ columnLengthList, expectedForbiddenValue }) => {
     it(`should throw when finds ${expectedForbiddenValue} in columnLengthList`, () => {
-      expect(() => orderedParts('qwertyuiopasdfghjklzxcvbnm', columnLengthList))
-        .toThrow(`columnLength can not be ${expectedForbiddenValue}.`);
+      expect(() =>
+        orderedParts('qwertyuiopasdfghjklzxcvbnm', columnLengthList)
+      ).toThrow(`columnLength can not be ${expectedForbiddenValue}.`);
     });
   });
 });
@@ -60,7 +62,7 @@ function fake(pid: number): IProcessInfo {
     memUsage: '',
     sessionName: '',
     sessionNumber: pid,
-  }
+  };
 }
 
 function setExecToError(text: string): void {
@@ -68,11 +70,11 @@ function setExecToError(text: string): void {
     callback(new Error(text), null, null);
     return null;
   };
-};
+}
 
 function setExecToStderr(text: string): void {
   ctx.exec = (command, callback) => {
     callback(null, null, text);
     return null;
   };
-};
+}

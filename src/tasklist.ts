@@ -3,7 +3,12 @@ import { ChildProcess, exec } from 'child_process';
 import { ITasklistResult } from './tasklist-result';
 
 export const ctx = {
-  exec: (command: string, callback?: ((error: Error | null, stdout: string, stderr: string) => void) | undefined) => exec(command, callback)
+  exec: (
+    command: string,
+    callback?:
+      | ((error: Error | null, stdout: string, stderr: string) => void)
+      | undefined
+  ) => exec(command, callback),
 };
 
 export function tasklist(): Promise<ITasklistResult> {
