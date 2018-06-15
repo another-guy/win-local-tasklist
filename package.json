@@ -1,15 +1,15 @@
 {
   "name": "win-local-tasklist",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "win-local-tasklist",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/another-guy/win-local-tasklist",
   "author": {
-    "name": "",
-    "email": "",
-    "url": ""
+    "name": "Igor Soloydenko",
+    "email": "soloydenko@gmail.com",
+    "url": "https://soloydenko.com"
   },
-  "keywords": [""],
+  "keywords": ["tasklist", "processes", "process", "ps aux", "ps", "process manager"],
   "files": ["lib"],
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
